@@ -33,17 +33,17 @@ Execute command: `R -v`
 ## Python Version
 
 Execute command: `python -V`
-
+[![python Version](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/python.png)]
 ## Result of Cloning Your Private Repository
 
 No need to show the clone action -- just the results of the `ls` command
-
+[![ls](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/ls.png)]
 Image goes here
 
 ## Output of vagrant box list command
 
 After completing this tutorial take a screenshot of the output of the command ```vagrant box list```
-
+[![Output](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/list.png)]
 ## Deliverable
 
 In the document, tooling-assignment-advanced-template.md, provide the required screenshots. Push a copy of this Markdown file in the private GitHub repo provided, under the itmd-521 folder and make an additional sub-folder named: **tooling-assignments-advanced**.  Submit the URL to your deliverable to Blackboard
