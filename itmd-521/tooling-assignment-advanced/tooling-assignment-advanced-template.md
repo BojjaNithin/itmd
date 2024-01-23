@@ -24,11 +24,12 @@ Execute command: `java -version`
 ## Spark Versions
 
 Execute command: `pyspark` and `spark-shell` and take screenshots of each.
-
+[![pyspark](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/pyspark.png)]
+[![spark-shell](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/spark-shell.png)]
 ## R Version
 
 Execute command: `R -v`
-
+[![R Version](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/R.png)]
 ## Python Version
 
 Execute command: `python -V`
