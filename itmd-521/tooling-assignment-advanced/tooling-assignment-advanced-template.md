@@ -5,11 +5,11 @@ Provide the required screenshots to show that tooling has been properly installe
 ## Hostname Change
 
 Image goes here
-
+[![Hostname change](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/vagrant.png)]
 ## WebServer Install
 
 Screenshot from the host OS of http://192.168.33.10  or whichever private IP you assign to your Vagrant Box
-
+[![Webserver Install](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/webserver.png)]
 ## MariaDB Version
 
 Execute command: `mysql -V`
