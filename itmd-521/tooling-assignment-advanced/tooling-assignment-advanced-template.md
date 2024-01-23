@@ -13,12 +13,12 @@ Screenshot from the host OS of http://192.168.33.10  or whichever private IP you
 ## MariaDB Version
 
 Execute command: `mysql -V`
-[![MariaDB Version](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/java.png)](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/mysql.png)
+[![MariaDB Version](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/mysql.png)]
 
 ## Java Version
 
 Execute command: `java -version`
-[![Java Version](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/java.png)](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/java.png)
+[![Java Version](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/java.png)]
 
 
 ## Spark Versions
