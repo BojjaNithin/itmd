@@ -42,8 +42,8 @@ Make sure the `vagrant@your-initials` is in the screenshot
 ### PySpark ScreenShot
 
 Place PySpark screenshot here
-![pyspark1.1]()
-![pyspark1.2]()
+![pyspark1.1](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/labs/week-03/images/pyspark1.1.png)
+![pyspark1.2](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/labs/week-03/images/pyspark1.2.png)
 ### SBT build Output Screenshot
 
 Place screenshot here
