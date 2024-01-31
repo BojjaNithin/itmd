@@ -47,6 +47,7 @@ Place PySpark screenshot here
 ### SBT build Output Screenshot
 
 Place screenshot here
+![sbt](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/labs/week-03/images/sbt.png)
 
 ### Spark Scala ScreenShot
 
