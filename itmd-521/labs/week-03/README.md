@@ -52,7 +52,8 @@ Place screenshot here
 ### Spark Scala ScreenShot
 
 Place Scala screenshot here
-
+![scala1](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/labs/week-03/images/scala1.png)
+![scala2](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/labs/week-03/images/scala2.png)
 ## Deliverables
 
 Using this template, under the `itmd-521` directory in your local repository, create a sub-directory named `labs`. Under that create another subdirectory named `week-03` and place this Readme.md file in that directory along with a folder for images.
