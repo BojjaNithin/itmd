@@ -1,54 +1,64 @@
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
+import org.apache.spark.sql.{SparkSession, DataFrame}
+import org.apache.spark.sql.types._
 
-object DivvyTripsAnalysis {
+object Assignment01 {
   def main(args: Array[String]): Unit = {
-    // Create SparkSession
+
+    // Create a SparkSession
     val spark = SparkSession.builder()
-      .appName("Divvy Trips Analysis")
+      .appName("Assignment01")
+      .config("spark.master", "local")
       .getOrCreate()
 
-    // Define schema
-    val schema = StructType(Array(
-      StructField("trip_id", IntegerType, nullable = true),
-      StructField("starttime", StringType, nullable = true),
-      StructField("stoptime", StringType, nullable = true),
-      StructField("bikeid", IntegerType, nullable = true),
-      StructField("tripduration", IntegerType, nullable = true),
-      StructField("from_station_id", IntegerType, nullable = true),
-      StructField("from_station_name", StringType, nullable = true),
-      StructField("to_station_id", IntegerType, nullable = true),
-      StructField("to_station_name", StringType, nullable = true),
-      StructField("usertype", StringType, nullable = true),
-      StructField("gender", StringType, nullable = true),
-      StructField("birthyear", StringType, nullable = true)
-    ))
+    // Define schema for CSV file
+    val schema = new StructType()
+      .add("trip_id", LongType)
+      .add("starttime", TimestampType)
+      .add("stoptime", TimestampType)
+      .add("bikeid", IntegerType)
+      .add("tripduration", IntegerType)
+      .add("from_station_id", IntegerType)
+      .add("from_station_name", StringType)
+      .add("to_station_id", IntegerType)
+      .add("to_station_name", StringType)
+      .add("usertype", StringType)
+      .add("gender", StringType)
+      .add("birthyear", IntegerType)
 
-    // Read CSV with inferred schema
-    val dfInferred = spark.read.option("header", "true").csv("Divvy_Trips_2015-Q1.csv")
-    println("Inferred Schema:")
-    dfInferred.printSchema()
-    println("Number of records:", dfInferred.count())
+    // Read CSV file with inferred schema
+    val df1 = readCSV(spark, "Divvy_Trips_2015-Q1.csv")
+    println("DataFrame 1 Schema:")
+    df1.printSchema()
+    println("Count: " + df1.count())
 
-    // Read CSV with programmatically attached schema
-    val dfProgrammatic = spark.read.option("header", "true").schema(schema).csv("Divvy_Trips_2015-Q1.csv")
-    println("\nProgrammatic Schema:")
-    dfProgrammatic.printSchema()
-    println("Number of records:", dfProgrammatic.count())
+    // Read CSV file with programmatically defined schema
+    val df2 = readCSV(spark, "Divvy_Trips_2015-Q1.csv", schema)
+    println("DataFrame 2 Schema:")
+    df2.printSchema()
+    println("Count: " + df2.count())
 
-    // Read CSV with schema via DDL
-    val dfDDL = spark.read.option("header", "true").csv("Divvy_Trips_2015-Q1.csv")
-    dfDDL.createOrReplaceTempView("divvy_trips")
-    val dfDDLWithSchema = spark.sql("SELECT * FROM divvy_trips")
-    println("\nSchema via DDL:")
-    dfDDLWithSchema.printSchema()
-    println("Number of records:", dfDDLWithSchema.count())
+    // Read CSV file with DDL-defined schema
+    val ddlSchema = "trip_id LONG, starttime TIMESTAMP, stoptime TIMESTAMP, bikeid INT, tripduration INT, from_station_id INT, from_station_name STRING, to_station_id INT, to_station_name STRING, usertype STRING, gender STRING, birthyear INT"
+    val df3 = readCSV(spark, "Divvy_Trips_2015-Q1.csv", StructType.fromDDL(ddlSchema))
 
-    // Select Gender based on last name and group by station to
-    val selectedGender = dfDDLWithSchema.selectExpr("CASE WHEN substring(gender, 1, 1) >= 'A' AND substring(gender, 1, 1) <= 'K' THEN 'Female' ELSE 'Male' END AS selected_gender", "to_station_name").groupBy("to_station_name").count()
-    selectedGender.show(10)
+    println("DataFrame 3 Schema:")
+    df3.printSchema()
+    println("Count: " + df3.count())
 
-    // Stop SparkSession
+    // Stop the SparkSession
     spark.stop()
+  }
+
+  // Function to read CSV with inferred, programmatically defined, or DDL-defined schema
+  def readCSV(spark: SparkSession, path: String, schema: StructType = null, ddlSchema: String = null): DataFrame = {
+    var df: DataFrame = null
+    if (ddlSchema != null) {
+      df = spark.read.option("header", "true").option("delimiter", ",").schema(ddlSchema).csv(path)
+    } else if (schema != null) {
+      df = spark.read.option("header", "true").schema(schema).csv(path)
+    } else {
+      df = spark.read.option("header", "true").csv(path)
+    }
+    df
   }
 }
