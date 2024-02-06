@@ -59,7 +59,6 @@ Screenshot goes here
 
 ### Screenshot of the printSchema inferred in Scala
 
-Screenshot goes here
 I noticed it was too difficult to execute the scala code on windows hence i used windows subsystem linux terminal
 ![inferred_scala](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/inferred_scala.png)
 ### Screenshot of the printSchema programmatically in Scala
