@@ -1,1 +1,12 @@
+# Ignore CSV files
+*.csv
+
+# Ignore TXT files
+*.txt
+
+# Ignore JSON files
+*.json
+
+# Ignore target directory for jarfile artifacts
+target/
 
