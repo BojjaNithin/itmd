@@ -46,14 +46,16 @@ Add the required screenshots here:
 ### Screenshot of the printSchema inferred in Python
 
 Screenshot goes here
+![inferred_scema](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/inferred_schema.png)
 
 ### Screenshot of the printSchema programmatically in Python
 
 Screenshot goes here
-
+![Programmatically_python](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/programmatically.png)
 ### Screenshot of the printSchema via DDL in Python
 
 Screenshot goes here
+![DDL in python](https://github.com/BojjaNithin/itmd/blob/main/itmd-521/images/ddl.png)
 
 ### Screenshot of the printSchema inferred in Scala
 
